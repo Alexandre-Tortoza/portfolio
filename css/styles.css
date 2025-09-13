@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+	--color-alto: oklch(90.06% 0 none);
+	--color-alto-50: oklch(99.405% 0 none);
+	--color-alto-100: oklch(96.115% 0 none);
+	--color-alto-200: oklch(90.06% 0 none);
+	--color-alto-300: oklch(81.406% 0 none);
+	--color-alto-400: oklch(72.516% 0 none);
+	--color-alto-500: oklch(63.343% 0 none);
+	--color-alto-600: oklch(53.824% 0 none);
+	--color-alto-700: oklch(43.86% 0 none);
+	--color-alto-800: oklch(33.289% 0 none);
+	--color-alto-900: oklch(21.779% 0 none);
+	--color-alto-950: oklch(15.434% 0 none);
+
+	--font-main: "Fira Code", monospace;
+}
+
+.link-hover {
+	@apply hover:backdrop-blur-2xl bg-red-400
+}
+
+/* tailwind.css */
+@layer utilities {
+	.link-fill {
+		margin-left: -0.25rem;
+		margin-right: -0.25rem;
+		padding-left: 0.25rem;
+		padding-right: 0.25rem;
+		box-shadow: inset 0 0 0 0 oklch(90.06% 0 none);
+		transition-property: color, box-shadow;
+		transition-duration: 500ms;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	.link-fill:hover {
+		color: white;
+		box-shadow: inset 100px 0 0 0 oklch(15.434% 0 none);
+	}
+}
