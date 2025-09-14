@@ -40,4 +40,8 @@
 		color: white;
 		box-shadow: inset 100px 0 0 0 oklch(15.434% 0 none);
 	}
+
+	  strong {
+    @apply hover:bg-alto-800 hover:text-alto-100 duration-300 delay-75 transition-all hover:cursor-pointer font-bold
+  }
 }
