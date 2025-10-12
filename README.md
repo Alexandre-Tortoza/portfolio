@@ -32,7 +32,7 @@ Abaixo, alguns dos projetos presentes neste repositório ou vinculados:
 | Projeto       | Descrição               | Tecnologias principais      |
 | ------------- | ----------------------- | --------------------------- |
 | Grume         | meu primeiro freelance  | PHP, JavaScript, CSS        |
-| Seu Portfólio | Este site               | HTML, CSS, JavaScript, etc. |
+| Meu Portfólio | Este site               | HTML, CSS, JavaScript, etc. |
 
 ---
 
