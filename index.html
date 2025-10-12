@@ -277,10 +277,47 @@
     </ul>
   </section>
 
-  <hr class="border-t-1 border-alto-600 my-3" data-aos="fade-down">
-  <hr class="border-t-4 border-alto-800 my-3" data-aos="fade-up">
+  <hr class="border-t-1 border-alto-600 my-3" data-aos="fade-down" data-aos="fade-down">
+  <hr class="border-t-1 border-alto-600 my-3" data-aos="fade-down" data-aos="fade-down">
 
-  <!-- <hr class="border-t-1 border-alto-600 my-3"> -->
+  <section class="my-8">
+    <h2 class="text-3xl font-bold" data-aos="fade-right">Meus projetos e trabalhos</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 mt-4 sm:divide-x divide-y sm:divide-y-0 divide-alto-800">
+
+      <a href="https://grume.com.br" target="_blank" class="p-4 sm:pr-8 group transition-transform duration-300" data-aos="fade-right">
+        <div class="overflow-hidden rounded-lg mb-4 border border-alto-800 shadow-lg">
+          <img class="w-full h-56 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-110" src="assets/grume.png" alt="GRUME - Grupo de Música">
+        </div>
+        <small class="text-alto-600 uppercase tracking-wider">Freelance</small>
+        <h3 class="text-lg font-bold mt-1">GRUME - Grupo de Música</h3>
+        <p class="text-alto-700 mt-1 font-thin text-balance leading-tight">
+          Desenvolvi um site dedicado ao Professor Danilo Ramos, com o objetivo de criar um espaço centralizado para divulgar os projetos do grupo de estudos em música. Além disso, implementei uma seção exclusiva para compartilhamento de materiais com os alunos, tornando o acesso mais prático e interativo. O projeto destaca minha capacidade de criar soluções personalizadas, funcionais e voltadas à experiência do usuário.
+        </p>
+      </a>
+
+      <a href="./assets/Transparência e Explicabilidade de Sistemas de IA.pdf" download class="p-4 sm:pl-8 group transition-transform duration-300" data-aos="fade-left">
+        <div class="overflow-hidden rounded-lg mb-4 border border-alto-800 shadow-lg">
+          <img class="w-full h-56 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-110" src="assets/explicabilidade.png" alt="Pesquisa Ética">
+        </div>
+        <small class="text-alto-600 uppercase tracking-wider">Projeto Acadêmico</small>
+        <h3 class="text-lg font-bold mt-1">Pesquisa Ética</h3>
+        <p class="text-alto-700 mt-1 font-thin text-balance leading-tight">
+          A pesquisa analisa os desafios da transparência e explicabilidade em sistemas de Inteligência Artificial, discutindo como a complexidade das redes neurais e o fenômeno da caixa-preta dificultam a compreensão das decisões automatizadas. O estudo destaca a importância da Explainable Artificial Intelligence (XAI), com métodos como LIME, SHAP e Grad-CAM, que tornam os modelos mais compreensíveis e auditáveis. Também aborda o impacto ético e legal da opacidade algorítmica, defendendo que a IA do futuro deve ser compreensível, responsável e centrada no humano, equilibrando desempenho técnico e clareza moral.
+        </p>
+      </a>
+
+    </div>
+  </section>
+
+
+
+
+  <hr class="border-t-1 border-alto-600 my-3" data-aos="fade-down">
+
+  <hr class="border-t-4 border-alto-800 my-3" data-aos="fade">
+
+  <hr class="border-t-1 border-alto-600 my-3" data-aos="fade-up">
 
   <div class="border border-alto-50 rounded-md p-4 bg-alto-800 lg:mx-0 mx-4 mt-8" data-aos="flip-down">
     <h2 class="text-3xl font-bold mb-4 text-alto-50">Contato</h2>
@@ -322,14 +359,11 @@
 
 
 
-  <!-- P5.js DEVE vir ANTES do seu código -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
 
-  <!-- Seu código que usa P5 -->
   <script src="./javascript/code_for_laymen.js"></script>
   <script src="./javascript/scroll.js"></script>
 
-  <!-- AOS -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
