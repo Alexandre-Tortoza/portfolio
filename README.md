@@ -34,8 +34,6 @@ Abaixo, alguns dos projetos presentes neste repositório ou vinculados:
 | Grume         | meu primeiro freelance  | PHP, JavaScript, CSS        |
 | Seu Portfólio | Este site               | HTML, CSS, JavaScript, etc. |
 
-> ⚠️ *(Sugestão: adicione links diretos aos projetos, capturas de tela e descrições mais detalhadas.)*
-
 ---
 
 ## Como executar localmente
