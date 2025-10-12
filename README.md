@@ -4,6 +4,9 @@ Bem-vindo! Aqui apresento projetos, habilidades e conteúdos que demonstram minh
 
 <img width="1822" height="835" alt="screenshot-2025-10-12_17-50-15" src="https://github.com/user-attachments/assets/6568210e-2ee9-4ab2-a163-7bdabc9ebd50" />
 
+
+[alexandre-tortoza.tech](alexandre-tortoza.tech)
+
 ---
 
 ## Sobre mim
@@ -39,6 +42,10 @@ npm run dev   # ou script equivalente para servir localmente
 ```
 
 Depois disso, acesse `http://localhost:XXXX` (dependendo da porta configurada).
+
+ou veja direto pelo link:
+
+[alexandre-tortoza.tech](alexandre-tortoza.tech)
 
 ---
 
