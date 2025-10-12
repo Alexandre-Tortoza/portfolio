@@ -1,6 +1,6 @@
 # Alexandre Tortoza – Portfólio
 
-Bem-vindo ao meu espaço digital! Aqui apresento projetos, habilidades e conteúdos que demonstram minha trajetória como desenvolvedor.
+Bem-vindo! Aqui apresento projetos, habilidades e conteúdos que demonstram minha trajetória como desenvolvedor.
 
 <img width="1822" height="835" alt="screenshot-2025-10-12_17-50-15" src="https://github.com/user-attachments/assets/6568210e-2ee9-4ab2-a163-7bdabc9ebd50" />
 
@@ -24,17 +24,6 @@ Algumas das tecnologias e competências que costumo usar nos meus projetos:
 * Versionamento com Git / GitHub
 * Design responsivo e usabilidade
 * Otimização de desempenho e acessibilidade
-
----
-
-## Projetos destacados
-
-Abaixo, alguns dos projetos presentes neste repositório ou vinculados:
-
-| Projeto       | Descrição               | Tecnologias principais      |
-| ------------- | ----------------------- | --------------------------- |
-| Grume         | meu primeiro freelance  | PHP, JavaScript, CSS        |
-| Meu Portfólio | Este site               | HTML, CSS, JavaScript, etc. |
 
 ---
 
