@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "github": "Github",
+    "linkedin": "LinkedIn",
+    "social_networks": "Redes sociais",
+    "skip_to_content": "Pular para o conteúdo principal"
+  },
+  "about": {
+    "intro": "Olá! Eu sou o <strong class=\"strong\">Alexandre</strong>, um <strong>desenvolvedor web</strong> movido pela curiosidade e pela vontade de inovar. Gosto de unir <strong>tecnologia</strong> e <strong>criatividade</strong> para transformar desafios em soluções. Trabalho com <strong class=\"hover:text-[#42b883] duration-300 transition-all ease-in\">Vue</strong>, <strong class=\"hover:text-[#f53003] duration-300 transition-all ease-in\">Laravel</strong>, mas também gosto de explorar projetos que envolvem <strong>IA</strong> e <strong>Machine Learning</strong>, sempre buscando transformar conceitos em experiências digitais que inspiram.",
+    "image_alt": "Foto de Alexandre Tortoza sorrindo"
+  },
+  "sections": {
+    "about_me": "Sobre mim",
+    "experience": "Experiência Profissional",
+    "projects": "Meus Projetos e Trabalhos",
+    "contact": "Contato"
+  },
+  "about_me": {
+    "text": "Desde pequeno, sempre fui movido pela <strong>curiosidade</strong> e pelo desejo de entender como as coisas funcionam. Quando ganhei meu primeiro <strong>computador</strong>, descobri um universo de possibilidades e percebi que poderia <strong>criar</strong> o que antes só imaginava. Em 2020, durante a pandemia, redescobri a <strong>programação</strong> por meio do <strong>curso em vídeo</strong> do <strong>Gustavo Guanabara</strong> e me <strong>apaixonei</strong> de vez pela área. Desde então, venho estudando <strong>tecnologia</strong>, explorando novas <strong>linguagens</strong>, <strong>frameworks</strong> e conceitos de <strong>IA</strong> e <strong>Machine Learning</strong>. Hoje, foco em <strong>desenvolvimento web</strong> com <strong class=\"hover:text-[#42b883] duration-300 transition-all ease-in\">Vue</strong> e <strong class=\"hover:text-[#f53003] duration-300 transition-all ease-in\">Laravel</strong>, criando aplicações funcionais e bem estruturadas. Na <strong class=\"hover:text-[#8a0538] duration-300 transition-all ease-in\">PUC-PR</strong>, tenho a oportunidade de transformar <strong>ideias</strong> em projetos <strong>reais</strong>, integrando <strong>inovação</strong>, <strong>design</strong> e <strong>análise de dados</strong> para desenvolver soluções que geram impacto."
+  },
+  "experience": {
+    "iforense": {
+      "company": "iForense",
+      "parent_company": "Alliniall Global",
+      "position": "Analista Júnior II",
+      "period": "abr 2025 - <strong>Atualmente</strong>",
+      "description": "Atuo no projeto <strong>Analisys</strong>, um sistema monolítico voltado para investigações digitais, desenvolvido com <strong>Laravel</strong>, <strong>Vue 3</strong>, utilizando <strong>MongoDB</strong> e <strong>MySQL</strong> em conjunto no banco de dados. Sou responsável pelo <strong>desenvolvimento</strong> e manutenção das interfaces do sistema, com foco em <strong>usabilidade</strong>, <strong>segurança</strong> e aderência à LGPD. Além da camada visual, também atuo na implementação de funcionalidades de backend, especialmente nos processos de inserção e consulta de dados sensíveis, garantindo o cumprimento dos requisitos legais e operacionais. Um dos principais desafios do projeto é garantir a conformidade com a Lei Geral de Proteção de Dados (LGPD), dado o volume e a sensibilidade das informações tratadas, equilibrando segurança, <strong>performance</strong> e <strong>experiência do usuário</strong>. Tenho contribuído para a evolução técnica do sistema com foco em <strong>escalabilidade</strong>, clareza no código e organização de componentes reutilizáveis no <strong>frontend</strong>, além da integração segura com o banco de dados.",
+      "tech_label": "Tecnologias utilizadas na iForense"
+    },
+    "bwise": {
+      "company": "Bwise",
+      "company_type": "Contabilidade",
+      "position": "Desenvolvedor Front-end",
+      "period": "jun 2024 - abr 2025",
+      "description": "Atuei no desenvolvimento da principal plataforma <strong>contábil</strong> da empresa, participando desde a <strong>escolha das tecnologias</strong> e <strong>frameworks</strong> até a definição da identidade visual e estrutura dos componentes. Essa foi minha primeira experiência liderando tecnicamente um projeto em escala maior, o que me proporcionou uma visão mais ampla sobre arquitetura de software e gestão de requisitos. O sistema foi desenvolvido com <strong>Vue 3</strong> e <strong>Bootstrap</strong>, com foco em dinamismo e adaptação a diferentes regras fiscais e tributárias conforme o estado e o perfil do usuário, tornando a experiência mais intuitiva e eficiente. Também implementei testes automatizados com <strong>Vitest</strong>, garantindo a confiabilidade de módulos críticos, especialmente nos relatórios gerados pela plataforma. Além desse projeto, também colaborei no desenvolvimento do <strong>TimeSheet</strong>, um sistema de controle de horas para uso interno, onde os colaboradores registravam o tempo trabalhado e vinculavam suas atividades aos respectivos clientes. Esse projeto foi desenvolvido com Vue 3 e Bootstrap e exigiu especial atenção à precisão no tratamento de horários e ao cálculo correto para fins de faturamento. Trabalhar com esse tipo de dado trouxe <strong>desafios</strong> técnicos importantes, especialmente relacionados à consistência e à integridade das informações em tempo real. Essa experiência me permitiu trabalhar com múltiplos <strong>projetos</strong> em paralelo, aprimorar minha organização técnica, melhorar minha comunicação com outros setores da empresa e aprofundar meu conhecimento sobre regras de negócio complexas.",
+      "tech_label": "Tecnologias utilizadas na Bwise"
+    },
+    "cedaspy": {
+      "company": "Cedaspy",
+      "position": "Estágio em Desenvolvimento Full-stack",
+      "period": "jan 2024 - jun 2024",
+      "description": "Participei ativamente do desenvolvimento e acompanhamento de projetos <strong>web</strong>, garantindo aderência aos objetivos técnicos e prazos estabelecidos. Atuei desde a concepção de soluções até a implementação e monitoramento em produção. Fui responsável pela criação de <strong>landing pages</strong> otimizadas para <strong>SEO</strong>, o que gerou um aumento significativo na <strong>captação de leads</strong> da empresa. Também implementei melhorias de performance em sistemas internos, incluindo o desenvolvimento de uma <strong>API</strong> de busca para dashboards administrativas. Fui responsável por parte do desenvolvimento e manutenção de sites institucionais utilizando <strong>WordPress</strong>, <strong>PHP</strong> e <strong>Bootstrap</strong>, com foco em responsividade, padronização visual e <strong>boas práticas</strong> de acessibilidade. Trabalhei de forma colaborativa na construção do sistema de ensino da empresa, desenvolvido em <strong>ReactJS</strong>, contribuindo com a criação de componentes reutilizáveis e estruturação da interface. Além disso, participei da identificação e correção de falhas em <strong>sistemas legados</strong>. Sempre priorizei a escrita de código limpo, manutenível e alinhado às boas práticas do desenvolvimento ágil.",
+      "tech_label": "Tecnologias utilizadas na Cedaspy"
+    }
+  },
+  "projects": {
+    "grume": {
+      "category": "Freelance",
+      "title": "GRUME - Grupo de Música",
+      "description": "Desenvolvi um site dedicado ao Professor Danilo Ramos, com o objetivo de criar um espaço centralizado para divulgar os projetos do grupo de estudos em música. Além disso, implementei uma seção exclusiva para compartilhamento de materiais com os alunos, tornando o acesso mais prático e interativo. O projeto destaca minha capacidade de criar soluções personalizadas, funcionais e voltadas à experiência do usuário.",
+      "image_alt": "Captura de tela do site GRUME - Grupo de Música"
+    },
+    "ai_research": {
+      "category": "Projeto Acadêmico",
+      "title": "Pesquisa Ética em IA",
+      "description": "A pesquisa analisa os desafios da transparência e explicabilidade em sistemas de Inteligência Artificial, discutindo como a complexidade das redes neurais e o fenômeno da caixa-preta dificultam a compreensão das decisões automatizadas. O estudo destaca a importância da Explainable Artificial Intelligence (XAI), com métodos como LIME, SHAP e Grad-CAM, que tornam os modelos mais compreensíveis e auditáveis. Também aborda o impacto ético e legal da opacidade algorítmica, defendendo que a IA do futuro deve ser compreensível, responsável e centrada no humano, equilibrando desempenho técnico e clareza moral.",
+      "image_alt": "Capa da pesquisa sobre Transparência e Explicabilidade em IA"
+    }
+  },
+  "contact": {
+    "message": "Se quiser me mandar uma mensagem, fique à vontade! Pode me perguntar algo ou, se preferir, discutir sobre novos projetos. Estou disponível também!",
+    "location": "<strong>Curitiba</strong>, Paraná - <strong>Brasil</strong>"
+  },
+  "footer": {
+    "copyright": "© 2025 Alexandre Marques • página de",
+    "open_source": "código",
+    "open_source_text": "aberto"
+  },
+  "accessibility": {
+    "back_to_top": "Voltar ao topo",
+    "back_to_top_label": "Voltar ao topo da página",
+    "interactive_animation": "Animação interativa de código",
+    "tech_stack": "Tecnologias e ferramentas"
+  }
+}

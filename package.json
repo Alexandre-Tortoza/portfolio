@@ -2,6 +2,7 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.1.12",
     "aos": "3.0.0-beta.6",
+    "i18n-js": "^4.5.1",
     "live-server": "^1.2.2",
     "p5": "^2.0.5",
     "tailwindcss": "^4.1.12",

@@ -37,7 +37,7 @@
 
 <body class="bg-alto px-4 mx-auto max-w-[1280px] font-main scroll-smooth">
 
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-alto-900 focus:text-white">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-alto-900 focus:text-white" data-i18n="nav.skip_to_content">
     Pular para o conteúdo principal
   </a>
 
@@ -46,6 +46,12 @@
       <header class="font-main py-4" data-aos="fade-down">
         <div class="mx-auto px-4 hidden lg:grid grid-cols-[1fr_auto_1fr] items-center gap-4">
           <div class="flex items-center gap-2">
+            <button id="language-toggle" class="flex gap-2 justify-center items-center" aria-label="Alternar idioma">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true">
+                <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm88,104a87.61,87.61,0,0,1-3.33,24H174.16a157.44,157.44,0,0,0,0-48h38.51A87.61,87.61,0,0,1,216,128ZM102,168H154a115.11,115.11,0,0,1-26,45A115.27,115.27,0,0,1,102,168Zm-3.9-16a140.84,140.84,0,0,1,0-48h59.88a140.84,140.84,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.84a157.44,157.44,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154,88H102a115.11,115.11,0,0,1,26-45A115.27,115.27,0,0,1,154,88Zm52.33,0H170.71a135.28,135.28,0,0,0-22.3-45.6A88.29,88.29,0,0,1,206.37,88ZM107.59,42.4A135.28,135.28,0,0,0,85.29,88H49.63A88.29,88.29,0,0,1,107.59,42.4ZM49.63,168H85.29a135.28,135.28,0,0,0,22.3,45.6A88.29,88.29,0,0,1,49.63,168Zm98.78,45.6a135.28,135.28,0,0,0,22.3-45.6h35.66A88.29,88.29,0,0,1,148.41,213.6Z"></path>
+              </svg>
+              <span class="language-text text-sm font-semibold">PT-BR</span>
+            </button>
             <hr class="flex-1 border-0 border-t-2 border-alto-800 my-3" aria-hidden="true">
           </div>
 
@@ -55,12 +61,12 @@
 
           <div class="flex items-center gap-2">
             <hr class="flex-1 border-0 border-t-2 border-alto-800 my-3" aria-hidden="true">
-            <nav class="flex items-center gap-3" aria-label="Redes sociais">
-              <a href="https://github.com/Alexandre-Tortoza" class="text-sm underline underline-offset-2 link-fill hover:text-alto-950 transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Visite meu perfil no GitHub">
+            <nav class="flex items-center gap-3" data-i18n-aria-label="nav.social_networks">
+              <a href="https://github.com/Alexandre-Tortoza" class="text-sm underline underline-offset-2 link-fill hover:text-alto-950 transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Visite meu perfil no GitHub" data-i18n="nav.github">
                 Github
               </a>
               <hr class="w-6 border-0 border-t-2 border-alto-800 my-3 shrink-0" aria-hidden="true">
-              <a href="https://www.linkedin.com/in/alexmrqr/" class="text-sm underline underline-offset-2 link-fill hover:text-alto-950 transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Visite meu perfil no LinkedIn">
+              <a href="https://www.linkedin.com/in/alexmrqr/" class="text-sm underline underline-offset-2 link-fill hover:text-alto-950 transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Visite meu perfil no LinkedIn" data-i18n="nav.linkedin">
                 LinkedIn
               </a>
             </nav>
@@ -78,11 +84,11 @@
       <article id="about" data-aos="fade-up">
         <div class="flex flex-col lg:grid lg:grid-cols-12 gap-8 p-4 items-center group">
           <div class="col-span-4 flex items-center justify-center" data-aos="fade-right">
-            <img src="./assets/hello_.jpg" alt="Foto de Alexandre Tortoza sorrindo" width="300" height="300" loading="eager" class="rounded-md transition-all delay-75 duration-500 shadow-[12px_12px_0_#1A1A1A] group-hover:shadow-none border-alto-500 lg:grayscale group-hover:grayscale-0 group-hover:scale-110">
+            <img src="./assets/hello_.jpg" data-i18n-alt="about.image_alt" alt="Foto de Alexandre Tortoza sorrindo" width="300" height="300" loading="eager" class="rounded-md transition-all delay-75 duration-500 shadow-[12px_12px_0_#1A1A1A] group-hover:shadow-none border-alto-500 lg:grayscale group-hover:grayscale-0 group-hover:scale-110">
           </div>
 
           <div class="col-span-8" data-aos="fade-left">
-            <p class="text-alto-950 lg:text-xl text-balance">
+            <p class="text-alto-950 lg:text-xl text-balance" data-i18n="about.intro">
               Olá! Eu sou o <strong class="strong">Alexandre</strong>, um <strong>desenvolvedor web</strong> movido pela curiosidade e pela vontade de inovar.
               Gosto de unir <strong>tecnologia</strong> e <strong>criatividade</strong> para transformar desafios em soluções.
               Trabalho com <strong class="hover:text-[#42b883] duration-300 transition-all ease-in">Vue</strong>, <strong class="hover:text-[#f53003] duration-300 transition-all ease-in">Laravel</strong>, mas também gosto de explorar projetos que envolvem <strong>IA</strong> e <strong>Machine Learning</strong>, sempre buscando transformar conceitos em experiências digitais que inspiram.
@@ -96,7 +102,7 @@
       </div>
     </section>
 
-    <section data-aos="fade-up" class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]" aria-label="Tecnologias e ferramentas">
+    <section data-aos="fade-up" class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]" data-i18n-aria-label="accessibility.tech_stack">
       <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 animate-infinite-scroll">
         <li><i class="devicon-vuejs-plain text-4xl" aria-label="Vue.js" title="Vue.js"></i></li>
         <li><i class="devicon-laravel-plain text-4xl" aria-label="Laravel" title="Laravel"></i></li>
@@ -146,10 +152,10 @@
   </div>
 
   <section class="my-24 px-4 lg:p-0" aria-labelledby="about-heading">
-    <h2 id="about-heading" class="text-3xl font-bold" data-aos="fade-right">Sobre mim</h2>
+    <h2 id="about-heading" class="text-3xl font-bold" data-aos="fade-right" data-i18n="sections.about_me">Sobre mim</h2>
     <div class="flex flex-col lg:grid lg:grid-cols-2 gap-8 justify-center items-center">
       <div data-aos="fade-right">
-        <p class="mt-2 text-balance">
+        <p class="mt-2 text-balance" data-i18n="about_me.text">
           Desde pequeno, sempre fui movido pela <strong>curiosidade</strong> e pelo desejo de entender como as coisas funcionam. Quando ganhei meu primeiro <strong>computador</strong>, descobri um universo de possibilidades e percebi que poderia <strong>criar</strong> o que antes só imaginava.
           Em 2020, durante a pandemia, redescobri a <strong>programação</strong> por meio do <strong>curso em vídeo</strong> do <strong>Gustavo Guanabara</strong> e me <strong>apaixonei</strong> de vez pela área. Desde então, venho estudando <strong>tecnologia</strong>, explorando novas <strong>linguagens</strong>, <strong>frameworks</strong> e conceitos de <strong>IA</strong> e <strong>Machine Learning</strong>.
           Hoje, foco em <strong>desenvolvimento web</strong> com <strong class="hover:text-[#42b883] duration-300 transition-all ease-in">Vue</strong> e <strong class="hover:text-[#f53003] duration-300 transition-all ease-in">Laravel</strong>, criando aplicações funcionais e bem estruturadas.
@@ -158,7 +164,7 @@
       </div>
 
       <div class="flex justify-center items-center">
-        <div id="canvas-wrapper" class="relative w-10/12 lg:w-4/5 h-[250px] overflow-hidden rounded-md bg-transparent" data-aos="fade-left" role="img" aria-label="Animação interativa de código">
+        <div id="canvas-wrapper" class="relative w-10/12 lg:w-4/5 h-[250px] overflow-hidden rounded-md bg-transparent" data-aos="fade-left" role="img" data-i18n-aria-label="accessibility.interactive_animation">
           <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_50%,theme(colors.alto.800)_100%)]"></div>
         </div>
       </div>
@@ -168,7 +174,7 @@
   <hr class="border-t-4 border-alto-800 my-3" data-aos="fade" aria-hidden="true">
 
   <section class="my-24 px-4 lg:p-0" aria-labelledby="experience-heading">
-    <h2 id="experience-heading" class="text-3xl font-bold" data-aos="fade">Experiência Profissional</h2>
+    <h2 id="experience-heading" class="text-3xl font-bold" data-aos="fade" data-i18n="sections.experience">Experiência Profissional</h2>
     <ul class="relative border-s-2 border-alto-800 mt-8 space-y-20">
 
       <li class="ms-5" data-aos="fade">
@@ -176,21 +182,21 @@
         <div class="lg:flex justify-between items-center mb-8 lg:mb-2">
           <div>
             <h3 class="text-xl font-semibold">
-              <strong class="hover:text-[#2924ad] hover:bg-white duration-300 ease-in-out cursor-pointer">iForense</strong> - Alliniall Global
+              <strong class="hover:text-[#2924ad] hover:bg-white duration-300 ease-in-out cursor-pointer" data-i18n="experience.iforense.company">iForense</strong> - <span data-i18n="experience.iforense.parent_company">Alliniall Global</span>
             </h3>
-            <span class="font-semibold">Analista Júnior II</span>
+            <span class="font-semibold" data-i18n="experience.iforense.position">Analista Júnior II</span>
           </div>
-          <time datetime="2025-04" class="bg-alto-800 text-alto-100 px-2 py-1 text-xs lg:text-base">
+          <time datetime="2025-04" class="bg-alto-800 text-alto-100 px-2 py-1 text-xs lg:text-base" data-i18n="experience.iforense.period">
             abr 2025 - <strong>Atualmente</strong>
           </time>
         </div>
-        <p class="font-light text-balance">
+        <p class="font-light text-balance" data-i18n="experience.iforense.description">
           Atuo no projeto <strong>Analisys</strong>, um sistema monolítico voltado para investigações digitais, desenvolvido com <strong>Laravel</strong>, <strong>Vue 3</strong>, utilizando <strong>MongoDB</strong> e <strong>MySQL</strong> em conjunto no banco de dados.
           Sou responsável pelo <strong>desenvolvimento</strong> e manutenção das interfaces do sistema, com foco em <strong>usabilidade</strong>, <strong>segurança</strong> e aderência à LGPD. Além da camada visual, também atuo na implementação de funcionalidades de backend, especialmente nos processos de inserção e consulta de dados sensíveis, garantindo o cumprimento dos requisitos legais e operacionais.
           Um dos principais desafios do projeto é garantir a conformidade com a Lei Geral de Proteção de Dados (LGPD), dado o volume e a sensibilidade das informações tratadas, equilibrando segurança, <strong>performance</strong> e <strong>experiência do usuário</strong>.
           Tenho contribuído para a evolução técnica do sistema com foco em <strong>escalabilidade</strong>, clareza no código e organização de componentes reutilizáveis no <strong>frontend</strong>, além da integração segura com o banco de dados.
         </p>
-        <ul class="flex gap-5 mt-4 flex-wrap" aria-label="Tecnologias utilizadas na iForense">
+        <ul class="flex gap-5 mt-4 flex-wrap" data-i18n-aria-label="experience.iforense.tech_label">
           <li class="border-2 border-alto-800 px-2 py-1 hover:bg-alto-800 hover:text-alto-100 transition-all duration-300 cursor-pointer">Vue.js</li>
           <li class="border-2 border-alto-800 px-2 py-1 hover:bg-alto-800 hover:text-alto-100 transition-all duration-300 cursor-pointer">PHP</li>
           <li class="border-2 border-alto-800 px-2 py-1 hover:bg-alto-800 hover:text-alto-100 transition-all duration-300 cursor-pointer">Laravel</li>
@@ -207,21 +213,21 @@
         <div class="lg:flex justify-between items-center mb-8 lg:mb-2">
           <div>
             <h3 class="text-xl font-semibold">
-              <strong class="hover:text-[#35e173] duration-300 ease-in-out cursor-pointer">Bwise</strong> Contabilidade
+              <strong class="hover:text-[#35e173] duration-300 ease-in-out cursor-pointer" data-i18n="experience.bwise.company">Bwise</strong> <span data-i18n="experience.bwise.company_type">Contabilidade</span>
             </h3>
-            <span class="font-semibold">Desenvolvedor Front-end</span>
+            <span class="font-semibold" data-i18n="experience.bwise.position">Desenvolvedor Front-end</span>
           </div>
-          <time datetime="2024-06/2025-04" class="bg-alto-800 text-alto-100 px-2 py-1 text-xs lg:text-base">
+          <time datetime="2024-06/2025-04" class="bg-alto-800 text-alto-100 px-2 py-1 text-xs lg:text-base" data-i18n="experience.bwise.period">
             jun 2024 - abr 2025
           </time>
         </div>
-        <p class="font-light text-balance">
+        <p class="font-light text-balance" data-i18n="experience.bwise.description">
           Atuei no desenvolvimento da principal plataforma <strong>contábil</strong> da empresa, participando desde a <strong>escolha das tecnologias</strong> e <strong>frameworks</strong> até a definição da identidade visual e estrutura dos componentes. Essa foi minha primeira experiência liderando tecnicamente um projeto em escala maior, o que me proporcionou uma visão mais ampla sobre arquitetura de software e gestão de requisitos.
           O sistema foi desenvolvido com <strong>Vue 3</strong> e <strong>Bootstrap</strong>, com foco em dinamismo e adaptação a diferentes regras fiscais e tributárias conforme o estado e o perfil do usuário, tornando a experiência mais intuitiva e eficiente. Também implementei testes automatizados com <strong>Vitest</strong>, garantindo a confiabilidade de módulos críticos, especialmente nos relatórios gerados pela plataforma.
           Além desse projeto, também colaborei no desenvolvimento do <strong>TimeSheet</strong>, um sistema de controle de horas para uso interno, onde os colaboradores registravam o tempo trabalhado e vinculavam suas atividades aos respectivos clientes. Esse projeto foi desenvolvido com Vue 3 e Bootstrap e exigiu especial atenção à precisão no tratamento de horários e ao cálculo correto para fins de faturamento. Trabalhar com esse tipo de dado trouxe <strong>desafios</strong> técnicos importantes, especialmente relacionados à consistência e à integridade das informações em tempo real.
           Essa experiência me permitiu trabalhar com múltiplos <strong>projetos</strong> em paralelo, aprimorar minha organização técnica, melhorar minha comunicação com outros setores da empresa e aprofundar meu conhecimento sobre regras de negócio complexas.
         </p>
-        <ul class="flex gap-5 mt-4 flex-wrap" aria-label="Tecnologias utilizadas na Bwise">
+        <ul class="flex gap-5 mt-4 flex-wrap" data-i18n-aria-label="experience.bwise.tech_label">
           <li class="border-2 border-alto-800 px-2 py-1 hover:bg-alto-800 hover:text-alto-100 transition-all duration-300 cursor-pointer">Vue.js</li>
           <li class="border-2 border-alto-800 px-2 py-1 hover:bg-alto-800 hover:text-alto-100 transition-all duration-300 cursor-pointer">Javascript</li>
           <li class="border-2 border-alto-800 px-2 py-1 hover:bg-alto-800 hover:text-alto-100 transition-all duration-300 cursor-pointer">Typescript</li>
@@ -236,21 +242,21 @@
         <div class="lg:flex justify-between items-center mb-8 lg:mb-2">
           <div>
             <h3 class="text-xl font-semibold">
-              <strong class="hover:text-[#f3951c] duration-300 ease-in-out cursor-pointer">Cedaspy</strong>
+              <strong class="hover:text-[#f3951c] duration-300 ease-in-out cursor-pointer" data-i18n="experience.cedaspy.company">Cedaspy</strong>
             </h3>
-            <span class="font-semibold">Estágio em Desenvolvimento Full-stack</span>
+            <span class="font-semibold" data-i18n="experience.cedaspy.position">Estágio em Desenvolvimento Full-stack</span>
           </div>
-          <time datetime="2024-01/2024-06" class="bg-alto-800 text-alto-100 px-2 py-1 text-xs lg:text-base">
+          <time datetime="2024-01/2024-06" class="bg-alto-800 text-alto-100 px-2 py-1 text-xs lg:text-base" data-i18n="experience.cedaspy.period">
             jan 2024 - jun 2024
           </time>
         </div>
-        <p class="font-light text-balance">
+        <p class="font-light text-balance" data-i18n="experience.cedaspy.description">
           Participei ativamente do desenvolvimento e acompanhamento de projetos <strong>web</strong>, garantindo aderência aos objetivos técnicos e prazos estabelecidos. Atuei desde a concepção de soluções até a implementação e monitoramento em produção.
           Fui responsável pela criação de <strong>landing pages</strong> otimizadas para <strong>SEO</strong>, o que gerou um aumento significativo na <strong>captação de leads</strong> da empresa. Também implementei melhorias de performance em sistemas internos, incluindo o desenvolvimento de uma <strong>API</strong> de busca para dashboards administrativas.
           Fui responsável por parte do desenvolvimento e manutenção de sites institucionais utilizando <strong>WordPress</strong>, <strong>PHP</strong> e <strong>Bootstrap</strong>, com foco em responsividade, padronização visual e <strong>boas práticas</strong> de acessibilidade. Trabalhei de forma colaborativa na construção do sistema de ensino da empresa, desenvolvido em <strong>ReactJS</strong>, contribuindo com a criação de componentes reutilizáveis e estruturação da interface.
           Além disso, participei da identificação e correção de falhas em <strong>sistemas legados</strong>. Sempre priorizei a escrita de código limpo, manutenível e alinhado às boas práticas do desenvolvimento ágil.
         </p>
-        <ul class="flex gap-5 mt-4 flex-wrap" aria-label="Tecnologias utilizadas na Cedaspy">
+        <ul class="flex gap-5 mt-4 flex-wrap" data-i18n-aria-label="experience.cedaspy.tech_label">
           <li class="border-2 border-alto-800 px-2 py-1 hover:bg-alto-800 hover:text-alto-100 transition-all duration-300 cursor-pointer">ReactJS</li>
           <li class="border-2 border-alto-800 px-2 py-1 hover:bg-alto-800 hover:text-alto-100 transition-all duration-300 cursor-pointer">Javascript</li>
           <li class="border-2 border-alto-800 px-2 py-1 hover:bg-alto-800 hover:text-alto-100 transition-all duration-300 cursor-pointer">PHP</li>
@@ -266,18 +272,18 @@
   <hr class="border-t-1 border-alto-600 my-3" data-aos="fade-down" aria-hidden="true">
 
   <section class="my-8 px-4 lg:p-0" aria-labelledby="projects-heading">
-    <h2 id="projects-heading" class="text-3xl font-bold" data-aos="fade-right">Meus Projetos e Trabalhos</h2>
+    <h2 id="projects-heading" class="text-3xl font-bold" data-aos="fade-right" data-i18n="sections.projects">Meus Projetos e Trabalhos</h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 mt-4 sm:divide-x divide-y sm:divide-y-0 divide-alto-800">
 
       <article class="p-4 sm:pr-8 group transition-transform duration-300" data-aos="fade-right">
         <a href="https://grume.com.br" target="_blank" rel="noopener noreferrer" class="block">
           <div class="overflow-hidden rounded-lg mb-4 border border-alto-800 shadow-lg">
-            <img class="w-full h-56 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-110" src="assets/grume.png" alt="Captura de tela do site GRUME - Grupo de Música" loading="lazy" width="600" height="400">
+            <img class="w-full h-56 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-110" src="assets/grume.png" data-i18n-alt="projects.grume.image_alt" alt="Captura de tela do site GRUME - Grupo de Música" loading="lazy" width="600" height="400">
           </div>
-          <small class="text-alto-600 uppercase tracking-wider">Freelance</small>
-          <h3 class="text-lg font-bold mt-1 group-hover:text-alto-950 transition-colors">GRUME - Grupo de Música</h3>
-          <p class="text-alto-700 mt-1 font-thin text-balance leading-tight">
+          <small class="text-alto-600 uppercase tracking-wider" data-i18n="projects.grume.category">Freelance</small>
+          <h3 class="text-lg font-bold mt-1 group-hover:text-alto-950 transition-colors" data-i18n="projects.grume.title">GRUME - Grupo de Música</h3>
+          <p class="text-alto-700 mt-1 font-thin text-balance leading-tight" data-i18n="projects.grume.description">
             Desenvolvi um site dedicado ao Professor Danilo Ramos, com o objetivo de criar um espaço centralizado para divulgar os projetos do grupo de estudos em música. Além disso, implementei uma seção exclusiva para compartilhamento de materiais com os alunos, tornando o acesso mais prático e interativo. O projeto destaca minha capacidade de criar soluções personalizadas, funcionais e voltadas à experiência do usuário.
           </p>
         </a>
@@ -286,11 +292,11 @@
       <article class="p-4 sm:pl-8 group transition-transform duration-300" data-aos="fade-left">
         <a href="./assets/Transparência e Explicabilidade de Sistemas de IA.pdf" download class="block">
           <div class="overflow-hidden rounded-lg mb-4 border border-alto-800 shadow-lg">
-            <img class="w-full h-56 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-110" src="assets/explicabilidade.png" alt="Capa da pesquisa sobre Transparência e Explicabilidade em IA" loading="lazy" width="600" height="400">
+            <img class="w-full h-56 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-110" src="assets/explicabilidade.png" data-i18n-alt="projects.ai_research.image_alt" alt="Capa da pesquisa sobre Transparência e Explicabilidade em IA" loading="lazy" width="600" height="400">
           </div>
-          <small class="text-alto-600 uppercase tracking-wider">Projeto Acadêmico</small>
-          <h3 class="text-lg font-bold mt-1 group-hover:text-alto-950 transition-colors">Pesquisa Ética em IA</h3>
-          <p class="text-alto-700 mt-1 font-thin text-balance leading-tight">
+          <small class="text-alto-600 uppercase tracking-wider" data-i18n="projects.ai_research.category">Projeto Acadêmico</small>
+          <h3 class="text-lg font-bold mt-1 group-hover:text-alto-950 transition-colors" data-i18n="projects.ai_research.title">Pesquisa Ética em IA</h3>
+          <p class="text-alto-700 mt-1 font-thin text-balance leading-tight" data-i18n="projects.ai_research.description">
             A pesquisa analisa os desafios da transparência e explicabilidade em sistemas de Inteligência Artificial, discutindo como a complexidade das redes neurais e o fenômeno da caixa-preta dificultam a compreensão das decisões automatizadas. O estudo destaca a importância da Explainable Artificial Intelligence (XAI), com métodos como LIME, SHAP e Grad-CAM, que tornam os modelos mais compreensíveis e auditáveis. Também aborda o impacto ético e legal da opacidade algorítmica, defendendo que a IA do futuro deve ser compreensível, responsável e centrada no humano, equilibrando desempenho técnico e clareza moral.
           </p>
         </a>
@@ -304,13 +310,13 @@
   <hr class="border-t-1 border-alto-600 my-3" data-aos="fade-up" aria-hidden="true">
 
   <section class="border border-alto-50 rounded-md p-4 bg-alto-800 lg:mx-0 mx-4 mt-8" data-aos="flip-down" aria-labelledby="contact-heading">
-    <h2 id="contact-heading" class="text-3xl font-bold mb-4 text-alto-50">Contato</h2>
+    <h2 id="contact-heading" class="text-3xl font-bold mb-4 text-alto-50" data-i18n="sections.contact">Contato</h2>
     <hr class="border-t-1 border-alto-50 my-3" aria-hidden="true">
 
     <div class="flex flex-col-reverse lg:grid lg:grid-cols-3 gap-8 text-alto-50 lg:items-center">
       <address class="not-italic">
         <ul class="space-y-2">
-          <li><strong>Curitiba</strong>, Paraná - <strong>Brasil</strong></li>
+          <li data-i18n="contact.location"><strong>Curitiba</strong>, Paraná - <strong>Brasil</strong></li>
           <li>
             <a href="mailto:a.marquestortoza@gmail.com" class="underline hover:text-alto-300 transition-colors" target="_blank" rel="noopener noreferrer">
               a.marquestortoza@gmail.com
@@ -334,7 +340,7 @@
         </ul>
       </address>
 
-      <p class="col-span-2">
+      <p class="col-span-2" data-i18n="contact.message">
         Se quiser me mandar uma mensagem, fique à vontade!
         Pode me perguntar algo ou, se preferir, discutir sobre novos projetos.
         Estou disponível também!
@@ -344,15 +350,15 @@
 
   <footer class="mt-16 border-t-2 border-alto-800 text-center py-4" data-aos="fade" data-aos-offset="-25">
     <small class="font-light">
-      © 2025 Alexandre Marques • página de
-      <a href="https://github.com/Alexandre-Tortoza/portfolio" target="_blank" rel="noopener noreferrer" class="underline link-fill hover:text-alto-950 transition-colors">
+      <span data-i18n="footer.copyright">© 2025 Alexandre Marques • página de</span>
+      <a href="https://github.com/Alexandre-Tortoza/portfolio" target="_blank" rel="noopener noreferrer" class="underline link-fill hover:text-alto-950 transition-colors" data-i18n="footer.open_source">
         código
-      </a> aberto
+      </a> <span data-i18n="footer.open_source_text">aberto</span>
     </small>
   </footer>
 
   <div class="fixed bottom-5 right-5 z-50">
-    <a href="#header" title="Voltar ao topo" aria-label="Voltar ao topo da página" class="flex items-center justify-center w-12 h-12 rounded-full border border-alto-800 bg-alto-200 text-alto-950 hover:bg-alto-900 hover:text-white shadow-md hover:shadow-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-alto-900 focus:ring-offset-2">
+    <a href="#header" data-i18n-title="accessibility.back_to_top" data-i18n-aria-label="accessibility.back_to_top_label" title="Voltar ao topo" aria-label="Voltar ao topo da página" class="flex items-center justify-center w-12 h-12 rounded-full border border-alto-800 bg-alto-200 text-alto-950 hover:bg-alto-900 hover:text-white shadow-md hover:shadow-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-alto-900 focus:ring-offset-2">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true">
         <path d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"></path>
       </svg>
@@ -361,6 +367,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
   <script src="./javascript/code_for_laymen.js"></script>
+  <script type="module" src="./javascript/i18n.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init({
