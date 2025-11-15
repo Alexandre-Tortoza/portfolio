@@ -4,6 +4,8 @@ const letters =
 let res, scale, margin, xSpacing, ySpacing, maxDist;
 const speed = 0.15;
 let canvasParent;
+let interactionX = 0;
+let interactionY = 0;
 
 function reset() {
   scale = res / 400;
@@ -68,14 +70,18 @@ function setup() {
 function draw() {
   background(0, 0, 21);
 
+  // Update interaction position to follow mouse or touch
+  interactionX = mouseX;
+  interactionY = mouseY;
+
   for (let p of particles) {
-    // Calcula distância do mouse
-    const d = dist(p.origX, p.origY, mouseX, mouseY);
+    // Calcula distância do ponto de interação (mouse ou toque)
+    const d = dist(p.origX, p.origY, interactionX, interactionY);
 
     // Calcula a força de atração/distorção
     if (d < maxDist) {
       const force = map(d, 0, maxDist, 1, 0);
-      const angle = atan2(mouseY - p.origY, mouseX - p.origX);
+      const angle = atan2(interactionY - p.origY, interactionX - p.origX);
 
       p.targetX = p.origX + cos(angle) * force * 10 * scale;
       p.targetY = p.origY + sin(angle) * force * 10 * scale;
@@ -127,4 +133,25 @@ function windowResized() {
   const h = canvasParent.offsetHeight;
   resizeCanvas(w, h);
   setup();
+}
+
+// Touch support for mobile devices
+function touchMoved() {
+  // Update interaction position when user touches and moves
+  if (touches.length > 0) {
+    interactionX = touches[0].x;
+    interactionY = touches[0].y;
+  }
+  // Prevent default scrolling behavior
+  return false;
+}
+
+function touchStarted() {
+  // Update interaction position when user first touches
+  if (touches.length > 0) {
+    interactionX = touches[0].x;
+    interactionY = touches[0].y;
+  }
+  // Prevent default behavior
+  return false;
 }

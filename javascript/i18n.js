@@ -102,13 +102,19 @@ function translatePage() {
 
 // Function to update language button text
 function updateLanguageButton() {
-  const langButton = document.getElementById('language-toggle');
-  if (langButton) {
-    const langText = langButton.querySelector('.language-text');
-    if (langText) {
-      langText.textContent = currentLocale === 'pt-BR' ? 'PT-BR' : 'EN';
+  const langButtons = [
+    document.getElementById('language-toggle'),
+    document.getElementById('language-toggle-mobile')
+  ];
+
+  langButtons.forEach(langButton => {
+    if (langButton) {
+      const langText = langButton.querySelector('.language-text');
+      if (langText) {
+        langText.textContent = currentLocale === 'pt-BR' ? 'PT-BR' : 'EN';
+      }
     }
-  }
+  });
 }
 
 // Function to toggle language
@@ -126,11 +132,17 @@ async function initI18n() {
   if (loaded) {
     translatePage();
 
-    // Add event listener to language toggle button
-    const langButton = document.getElementById('language-toggle');
-    if (langButton) {
-      langButton.addEventListener('click', toggleLanguage);
-    }
+    // Add event listener to language toggle buttons (desktop and mobile)
+    const langButtons = [
+      document.getElementById('language-toggle'),
+      document.getElementById('language-toggle-mobile')
+    ];
+
+    langButtons.forEach(langButton => {
+      if (langButton) {
+        langButton.addEventListener('click', toggleLanguage);
+      }
+    });
   }
 }
 
