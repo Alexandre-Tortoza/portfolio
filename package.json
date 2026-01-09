@@ -11,11 +11,13 @@
   "dependencies": {
     "@astrojs/ts-plugin": "^1.10.6",
     "@tailwindcss/vite": "^4.1.18",
+    "aos": "^2.3.4",
     "astro": "^5.16.8",
     "tailwindcss": "^4.1.18",
     "three": "^0.182.0"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "@types/three": "^0.182.0"
   }
 }
