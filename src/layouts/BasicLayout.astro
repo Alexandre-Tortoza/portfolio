@@ -1,0 +1,71 @@
+
+---
+import '@styles/global.css'
+import 'aos/dist/aos.css'
+import { ViewTransitions } from 'astro:transitions'
+import initAOSUrl from '../scripts/initAOS.ts?url'
+
+import FloatingLinks from '@components/FloatingLinks.astro'
+
+import type {PageHead} from "../scripts/types/PageHead"
+
+const {lang = 'pt-br', title = 'Alexandre Tortoza'} = Astro.props
+
+const pagehead :PageHead = {
+  lang,
+  title
+}
+
+---
+
+<html lang={pagehead.lang}>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <title>{pagehead.title}</title>
+    <ViewTransitions fallback="none" />
+	</head>
+  <body  class="bg-plato-950 w-full">
+    <slot />
+
+    <FloatingLinks />
+
+    <script type="module" src={initAOSUrl}></script>
+
+    <script>
+      // Persistimos a posição de scroll da Home ao sair
+      document.addEventListener('astro:before-preparation', () => {
+        if (window.location.pathname === '/') {
+          const y = window.scrollY || 0;
+          sessionStorage.setItem('homeScrollY', String(y));
+        }
+      });
+
+      // Ao voltar para a Home, restauramos antes da pintura para evitar "pulo"
+      document.addEventListener('astro:after-swap', () => {
+        if (window.location.pathname === '/') {
+          const saved = sessionStorage.getItem('homeScrollY');
+          if (saved) {
+            const y = Number(saved) || 0;
+            window.scrollTo(0, y);
+            sessionStorage.removeItem('homeScrollY');
+          }
+        }
+      });
+
+      // Fallback: garante posição correta após carregamento completo (casos raros)
+      document.addEventListener('astro:page-load', () => {
+        if (window.location.pathname === '/') {
+          const saved = sessionStorage.getItem('homeScrollY');
+          if (saved) {
+            const y = Number(saved) || 0;
+            window.scrollTo(0, y);
+            sessionStorage.removeItem('homeScrollY');
+          }
+        }
+      });
+    </script>
+	</body>
+</html>

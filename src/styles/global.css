@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-plato-50: #f1f1f1;
+  --color-plato-100: #e2e2e2;
+  --color-plato-200: #c9c9c9;
+  --color-plato-300: #aeaeae;
+  --color-plato-400: #939393;
+  --color-plato-500: #7c7c7c;
+  --color-plato-600: #636363;
+  --color-plato-700: #4e4e4e;
+  --color-plato-800: #373737;
+  --color-plato-900: #222222;
+  --color-plato-950: #181818;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  /* font-weight: 400; */
+  font-style: normal;
+  color: var(--color-plato-100);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
+bold{
+  font-weight: 800 !important; 
+}

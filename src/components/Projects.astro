@@ -1,0 +1,277 @@
+---
+const projects = [
+	{
+		id: 'maison-satine',
+		name: 'Maison Satine',
+		description: `
+            Foi desenvolvida uma landing page para o canil de poodles Maison Satine, com o objetivo de apresentar a marca, valorizar o cuidado com os animais e facilitar o contato com potenciais clientes.
+
+            O projeto foi construído utilizando Astro e Tailwind CSS, priorizando performance, componentização e facilidade de manutenção. O design segue uma proposta leve, elegante e aconchegante, alinhada à identidade do canil, transmitindo confiança, carinho e profissionalismo.
+
+            A interface foi pensada para oferecer uma experiência clara e intuitiva, com hierarquia visual bem definida, tipografia suave e uso equilibrado de cores, garantindo boa leitura e navegação fluida em diferentes dispositivos. A landing page também foi desenvolvida com foco em responsividade e boas práticas de UI/UX, reforçando a presença digital da marca.
+        `,
+		technologies: ['HTML', 'CSS', 'JavaScript', 'Astro', 'Tailwind CSS'],
+		link: null,
+		image: '/portfolio/maison-satine.png'
+	},
+	{
+		id: 'tesouro-dos-cabelos',
+		name: 'Tesouro dos Cabelos',
+		description: `
+            O Sistema desenvolvido para a Tesouro dos Cabelos é uma solução digital de um catálogo virtual inteligente, permitindo que o usuário cadastre e gerencie os cabelos comprados de forma organizada e eficiente.
+
+            Cada item cadastrado alimenta uma dashboard administrativa, onde os dados são estruturados para gerar métricas e insights, como controle de estoque, categorização, status de disponibilidade e apoio à tomada de decisões. A interface foi pensada para facilitar a visualização das informações e otimizar o gerenciamento do catálogo.
+
+            O sistema também conta com a geração de QR Codes, possibilitando a impressão de etiquetas para cada cabelo cadastrado. Ao escanear o QR Code, o usuário é direcionado para uma página específica com os dados detalhados daquele item, garantindo rastreabilidade e agilidade na identificação.
+
+            Além disso, a plataforma oferece uma vitrine virtual pública, onde qualquer pessoa pode visualizar os cabelos disponíveis para venda, sem exposição de dados sensíveis. Essa separação entre área administrativa e área pública garante segurança da informação, ao mesmo tempo em que amplia a visibilidade dos produtos.
+        `,
+		technologies: ['Laravel', 'React','PHP', 'sqlite', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'Tailwind CSS'],
+		link: null,
+		image: '/portfolio/tesouro-dos-cabelos.png'
+	},
+	{
+		id: 'grume',
+		name: 'Grume',
+		description: `
+            O site do GRUME foi desenvolvido como um projeto freelance para o professor Danilos Ramos (UFPR), com o objetivo de centralizar e disponibilizar materiais de apoio para suas aulas, além de servir como vitrine para a produção artística do professor e dos alunos participantes do grupo.
+
+            Iniciado em 2023, o projeto evoluiu continuamente e recebeu, em 2024, melhorias significativas tanto na interface administrativa quanto na área pública do site. As atualizações focaram em usabilidade, organização do conteúdo e experiência do usuário, tornando a plataforma mais intuitiva, eficiente e visualmente consistente.
+
+            O projeto envolveu decisões de design de interface, arquitetura da informação e desenvolvimento front-end, buscando equilibrar funcionalidade, estética e facilidade de manutenção.
+        `,
+		technologies: ['HTML', 'CSS', 'Javascript', 'PHP', 'Tailwind CSS', 'MySQL'],
+		link: 'https://www.grume.com.br',
+		image: '/portfolio/grume.png'
+	},
+	{
+		id: 'sunnygo',
+		name: 'SunnyGo',
+		description: `
+            O projeto Sunny Go foi desenvolvido em colaboração com outros desenvolvedores, com foco na criação de uma plataforma para gestão de eventos e interação com clientes. Minha responsabilidade foi o front-end, cuidando das interfaces e garantindo uma experiência intuitiva e funcional para os usuários.
+
+            O desenvolvimento utilizou Vue.js e Bootstrap, partindo de um template inicial, permitindo rapidez na construção da primeira versão do sistema. Essa versão inicial possibilitava que o administrador cadastrasse recreadores e clientes, além de gerenciar os próximos eventos, oferecendo controle sobre as atividades e facilitando a organização interna.
+        `,
+		technologies: ['Vue.js', 'TypeScript', 'Bootstrap'],
+		link: null,
+		image: '/portfolio/sunny-go.png'
+	},
+	{
+		id: 'minervai',
+		name: 'MinervAi',
+		description: `
+            O projeto MinervAi é um protótipo de estudo voltado para gerenciamento de gastos e investimentos, desenvolvido para explorar soluções de inteligência artificial aplicadas a finanças pessoais. A plataforma conta com uma dashboard intuitiva, que apresenta métricas sobre despesas, saldos e padrões de investimento, oferecendo uma visão clara do gerenciamento financeiro de forma experimental.
+
+            Um dos destaques do protótipo é o chat integrado com um modelo de linguagem, que permite interações diretas com os dados financeiros. Para este projeto, utilizei um modelo local com Ollama, garantindo privacidade e controle total dos dados durante os testes. O chat permite simular operações como consultar saldos, registrar novos gastos ou adicionar créditos, oferecendo uma experiência prática e interativa sem depender de formulários tradicionais.
+        `,
+		technologies: ['React', 'Laravel','PHP' ,'TypeScript', 'Tailwind CSS', 'Ollama'],
+		link: null,
+		image: 'https://placehold.co/800x400/333/FFF?text=MinervAi'
+	}
+];
+---
+<section id="projetos" class="my-24">
+	<hr class="mt-10 my-2 border-2 border-plato-800" data-aos="fade-down" data-aos-delay="100" />
+	<hr class="mb-10 border border-plato-800" data-aos="fade-up" />
+
+	<h2 class="text-2xl mb-8 font-bold" data-aos="fade-right">Projetos</h2>
+
+	<!-- BentoBox Grid -->
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[200px]" data-aos="fade-up">
+		<!-- Maison Satine - Large -->
+		<div class="project-card md:col-span-2 md:row-span-2 relative overflow-hidden rounded-2xl border-2 border-plato-600/40 group cursor-pointer" data-project-id="maison-satine">
+			<img src={projects[0].image} alt={projects[0].name} class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+			<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+			<div class="absolute bottom-0 left-0 p-6">
+				<h3 class="text-xl font-bold text-white mb-2">{projects[0].name}</h3>
+				<button class="px-4 py-2 bg-plato-100 text-plato-950 rounded-lg text-sm font-semibold hover:bg-plato-200 transition-colors">
+					Ver mais
+				</button>
+			</div>
+		</div>
+
+		<!-- Tesouro dos Cabelos -->
+		<div class="project-card md:row-span-1 relative overflow-hidden rounded-2xl border-2 border-plato-600/40 group cursor-pointer" data-project-id="tesouro-dos-cabelos">
+			<img src={projects[1].image} alt={projects[1].name} class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+			<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+			<div class="absolute bottom-0 left-0 p-4">
+				<h3 class="text-lg font-bold text-white mb-2">{projects[1].name}</h3>
+				<button class="px-3 py-1.5 bg-plato-100 text-plato-950 rounded-lg text-xs font-semibold hover:bg-plato-200 transition-colors">
+					Ver mais
+				</button>
+			</div>
+		</div>
+
+		<!-- Grume -->
+		<div class="project-card md:row-span-1 relative overflow-hidden rounded-2xl border-2 border-plato-600/40 group cursor-pointer" data-project-id="grume">
+			<img src={projects[2].image} alt={projects[2].name} class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+			<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+			<div class="absolute bottom-0 left-0 p-4">
+				<h3 class="text-lg font-bold text-white mb-2">{projects[2].name}</h3>
+				<button class="px-3 py-1.5 bg-plato-100 text-plato-950 rounded-lg text-xs font-semibold hover:bg-plato-200 transition-colors">
+					Ver mais
+				</button>
+			</div>
+		</div>
+
+		<!-- SunnyGo -->
+		<div class="project-card md:col-span-1 md:row-span-1 relative overflow-hidden rounded-2xl border-2 border-plato-600/40 group cursor-pointer" data-project-id="sunnygo">
+			<img src={projects[3].image} alt={projects[3].name} class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+			<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+			<div class="absolute bottom-0 left-0 p-4">
+				<h3 class="text-lg font-bold text-white mb-2">{projects[3].name}</h3>
+				<button class="px-4 py-2 bg-plato-100 text-plato-950 rounded-lg text-sm font-semibold hover:bg-plato-200 transition-colors">
+					Ver mais
+				</button>
+			</div>
+		</div>
+
+		<!-- MinervAi -->
+		<div class="project-card md:col-span-2 md:row-span-1 relative overflow-hidden rounded-2xl border-2 border-plato-600/40 group cursor-pointer" data-project-id="minervai">
+			<img src={projects[4].image} alt={projects[4].name} class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+			<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+			<div class="absolute bottom-0 left-0 p-4">
+				<h3 class="text-lg font-bold text-white mb-2">{projects[4].name}</h3>
+				<button class="px-3 py-1.5 bg-plato-100 text-plato-950 rounded-lg text-xs font-semibold hover:bg-plato-200 transition-colors">
+					Ver mais
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-700 ease-out mx-2">
+		<div id="modal-overlay" class="absolute inset-0 bg-black/90 transition-all duration-700 ease-out"></div>
+		<div id="modal-content" class="relative bg-plato-900/40 backdrop-blur-lg rounded-3xl border border-plato-600/30 shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto transform  opacity-0 transition-all duration-700 ease-out" style="box-shadow: 0 15px 40px -8px rgba(220, 220, 220, 0.12)">
+			<!-- Close Button -->
+			<button id="modal-close" class="absolute top-8 right-8 p-2 rounded-xl bg-plato-800 hover:bg-plato-700 transition-all duration-300 z-10 border border-plato-600/30">
+				<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+				</svg>
+			</button>
+
+			<!-- Modal Body -->
+			<div id="modal-body" class="p-6">
+				<!-- Content will be injected here -->
+			</div>
+		</div>
+	</div>
+</section>
+
+<script define:vars={{ projects }}>
+	const projectCards = document.querySelectorAll('.project-card');
+	const modal = document.getElementById('project-modal');
+	const modalContent = document.getElementById('modal-content');
+	const modalBody = document.getElementById('modal-body');
+	const modalOverlay = document.getElementById('modal-overlay');
+	const modalClose = document.getElementById('modal-close');
+
+	function openModal(projectId, clickedCard) {
+		const project = projects.find(p => p.id === projectId);
+		if (!project) return;
+
+		// Inject content
+		modalBody.innerHTML = `
+			<img src="${project.image}" alt="${project.name}" class="w-full h-64 object-cover rounded-2xl mb-6 border border-plato-600/30">
+			<h2 class="text-3xl font-bold mb-4">${project.name}</h2>
+			<p class="text-plato-300 mb-6 leading-relaxed">${project.description}</p>
+			
+			<div class="mb-6">
+				<h3 class="text-xl font-semibold mb-3">Tecnologias</h3>
+				<div class="flex flex-wrap gap-2">
+					${project.technologies.map(tech => `
+						<span class="px-4 py-2 bg-plato-800 border border-plato-700 rounded-xl text-sm">${tech}</span>
+					`).join('')}
+				</div>
+			</div>
+			
+             ${project.link ? `
+                <a href="${project.link}" target="_blank" class="inline-block px-6 py-3 bg-plato-100 text-plato-950 rounded-xl font-semibold hover:bg-plato-200 transition-all border border-plato-200">
+                    Visitar Projeto
+                </a>
+            ` : ''}
+		`;
+
+		// Show modal with smooth glass effect
+		document.body.style.overflow = 'hidden';
+		modal.classList.remove('pointer-events-none');
+		
+		requestAnimationFrame(() => {
+			modal.classList.remove('opacity-0');
+			modal.classList.add('opacity-100');
+			
+			setTimeout(() => {
+				modalContent.classList.remove('scale-90', 'opacity-0');
+				modalContent.classList.add('scale-100', 'opacity-100');
+			}, 150);
+		});
+	}
+
+	function closeModal() {
+		// Smooth fade out
+		modalContent.classList.remove('scale-100', 'opacity-100');
+		modalContent.classList.add('scale-95', 'opacity-0');
+		
+		setTimeout(() => {
+			modal.classList.remove('opacity-100');
+			modal.classList.add('opacity-0');
+			
+			setTimeout(() => {
+				modal.classList.add('pointer-events-none');
+				document.body.style.overflow = '';
+			}, 500);
+		}, 200);
+	}
+
+	// Event listeners
+	projectCards.forEach(card => {
+		card.addEventListener('click', (e) => {
+			const projectId = card.getAttribute('data-project-id');
+			openModal(projectId, card);
+		});
+	});
+
+	modalClose?.addEventListener('click', closeModal);
+	modalOverlay?.addEventListener('click', closeModal);
+
+	// Close on ESC
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && modal.classList.contains('opacity-100')) {
+			closeModal();
+		}
+	});
+</script>
+
+<style>
+	.project-card {
+		transition: transform 0.3s ease-out;
+	}
+	
+	.project-card:hover {
+		transform: translateY(-4px);
+	}
+
+	#modal-content {
+		transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+	}
+
+	/* Glass effect scrollbar */
+	#modal-content::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	#modal-content::-webkit-scrollbar-track {
+		background: rgba(55, 55, 55, 0.3);
+		border-radius: 10px;
+	}
+
+	#modal-content::-webkit-scrollbar-thumb {
+		background: rgba(124, 124, 124, 0.5);
+		border-radius: 10px;
+		backdrop-filter: blur(10px);
+	}
+
+	#modal-content::-webkit-scrollbar-thumb:hover {
+		background: rgba(124, 124, 124, 0.7);
+	}
+</style>

@@ -1,0 +1,258 @@
+---
+import NavComponent from "@components/NavComponent.astro";
+---
+
+<div id="home" class="h-screen w-full p-4 md:p-20 box-border" data-aos="fade-in">
+    <div class="absolute inset-8 md:inset-20 border border-plato-500 box-border ">
+        <div class="h-full  w-full" id="space">
+            <canvas id="galaxy-canvas" class="absolute inset-0 w-full h-full "></canvas>
+            <div class="m-10" data-aos="fade-up" data-aos-delay="100">
+                <div>
+                    <h1 class="text-4xl md:text-6xl text-white font-light">Alexandre Tortoza</h1>
+                    <small class="text-sm md:text-xl font-thin">Desenvolvedor e UI/UX Designer</small>
+                </div>
+
+                <NavComponent />
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+import * as THREE from 'three';
+
+// Classe responsável por gerar e animar a galáxia de partículas.
+class GalaxyParticles {
+    // Referências para DOM e objetos do Three.js
+    container: HTMLElement | null;
+    canvas: HTMLCanvasElement | null;
+    scene: THREE.Scene | null;
+    camera: THREE.PerspectiveCamera | null;
+    renderer: THREE.WebGLRenderer | null;
+    particles: THREE.Points | null;
+    animationFrameId: number | null;
+    resizeListener: ((this: Window, ev: UIEvent) => any) | null;
+
+    constructor(containerId: string, canvasId: string) {
+        // Se mudar os IDs no HTML, atualize-os aqui.
+        this.container = document.getElementById(containerId);
+        this.canvas = document.getElementById(canvasId) as HTMLCanvasElement;
+        
+        this.scene = null;
+        this.camera = null;
+        this.renderer = null;
+        this.particles = null;
+        this.animationFrameId = null;
+        this.resizeListener = null;
+        
+        this.initialize();
+    }
+
+    initialize() {
+        // Pipeline de inicialização. Você pode:
+        // - Adiar createGalaxy() para quando o canvas estiver visível
+        // - Recriar a cena ao trocar parâmetros dinamicamente
+        this.setupScene();
+        this.setupCamera();
+        this.setupRenderer();
+        this.createGalaxy();
+        this.handleResize();
+        this.animate();
+    }
+
+    setupScene() {
+        this.scene = new THREE.Scene();
+        // Opções de cena:
+        // - Cor de fundo: descomente para fundo sólido
+        //   this.scene.background = new THREE.Color('#000000');
+        // - Neblina (fog) para dar profundidade
+          this.scene.fog = new THREE.Fog('#3B848C', 10, 120);
+    }
+
+    setupCamera() {
+        if (!this.container) return;
+        const width = this.container.clientWidth;
+        const height = this.container.clientHeight;
+        
+        // Camera: FOV (75), aspect, near, far
+        // - Para aproximar/afastar, ajuste o FOV (menor = mais zoom)
+        // - Para galáxias maiores, aumente 'far' se precisar
+        this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+        // Posição da câmera: mude para alterar o ângulo de visão
+        this.camera.position.set(0, 20, 30);
+        this.camera.lookAt(0, 0, 0);
+    }
+    setupRenderer() {
+        this.renderer = new THREE.WebGLRenderer({
+            canvas: this.canvas,
+            alpha: true,
+            antialias: true
+        });
+        
+        if (!this.container) return;
+        const width = this.container.clientWidth;
+        const height = this.container.clientHeight;
+        
+        this.renderer.setSize(width, height);
+        // Pixel ratio: aumenta nitidez, pode impactar performance
+        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        // Dicas:
+        // - Para performance em dispositivos fracos, limite para 1
+        // - this.renderer.setPixelRatio(1);
+    }
+
+    createGalaxy() {
+        // Número de partículas: maior = mais denso, mais pesado
+        // Sugestões: mobile ~5k-10k, desktop ~15k-40k
+        const particleCount = 35000;
+        const positions = new Float32Array(particleCount * 3);
+        const colors = new Float32Array(particleCount * 3);
+        
+        // Geometria/forma da galáxia:
+        // - galaxyRadius: raio máximo da galáxia
+        // - galaxyArms: número de braços espirais (2-6 funcionam bem)
+        // - spin: intensidade da espiral (negativo muda o sentido)
+        // - randomness: espalhamento (0 = muito organizado, 1 = caótico)
+        // - randomnessPower: curva de distribuição (maior = concentrado no centro)
+        const galaxyRadius = 90;
+        const galaxyArms = 5;
+        const spin = 1;
+        const randomness = 0.4;
+        const randomnessPower = 0.3;
+        
+        // Paleta de cores (Plato): substitua por suas cores
+        // Dica: mantenha tons próximos para um gradiente suave
+        const platoColors = [
+            new THREE.Color('#f1f1f1'),
+            new THREE.Color('#e2e2e2'),
+            new THREE.Color('#c9c9c9'),
+            new THREE.Color('#aeaeae'),
+            new THREE.Color('#939393'),
+            new THREE.Color('#7c7c7c'),
+        ];
+        
+        const innerColor = platoColors[0];
+        const outerColor = platoColors[5];
+
+        for (let particleIndex = 0; particleIndex < particleCount; particleIndex++) {
+            const index = particleIndex * 3;
+            
+            const radius = Math.random() * galaxyRadius;
+            const spinAngle = radius * spin;
+            const branchAngle = ((particleIndex % galaxyArms) / galaxyArms) * Math.PI * 2;
+            
+            // Ruído 3D: ajuste para controlar espessura/altura da galáxia
+            const randomX = Math.pow(Math.random(), randomnessPower) * 
+                           (Math.random() < 0.5 ? 1 : -1) * randomness * radius;
+            const randomY = Math.pow(Math.random(), randomnessPower) * 
+                           (Math.random() < 0.5 ? 1 : -1) * randomness * radius;
+            const randomZ = Math.pow(Math.random(), randomnessPower) * 
+                           (Math.random() < 0.5 ? 1 : -1) * randomness * radius;
+            
+            positions[index] = Math.cos(branchAngle + spinAngle) * radius + randomX;
+            positions[index + 1] = randomY;
+            positions[index + 2] = Math.sin(branchAngle + spinAngle) * radius + randomZ;
+            
+            // Cor por distância: mistura inner→outer com variação aleatória
+            const mixedColor = innerColor.clone();
+            const radiusRatio = radius / galaxyRadius;
+            mixedColor.lerp(outerColor, radiusRatio);
+            
+            const colorVariation = Math.random() * 0.3;
+            const colorIndex = Math.floor(Math.random() * platoColors.length);
+            mixedColor.lerp(platoColors[colorIndex], colorVariation);
+            
+            colors[index] = mixedColor.r;
+            colors[index + 1] = mixedColor.g;
+            colors[index + 2] = mixedColor.b;
+        }
+        
+        const geometry = new THREE.BufferGeometry();
+        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+        
+        const material = new THREE.PointsMaterial({
+            size: 0.12,
+            // size: tamanho do ponto; maior = estrelas maiores
+            sizeAttenuation: true, // true = pontos menores ao longe
+            // depthWrite: false + AdditiveBlending dão efeito de brilho
+            depthWrite: false,
+            blending: THREE.AdditiveBlending,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.4 // reduza para uma galáxia mais etérea
+        });
+        
+        this.particles = new THREE.Points(geometry, material);
+        // Inclinação inicial da galáxia
+        this.particles.rotation.x = 0; // inclinação em X
+        this.particles.rotation.z = 0.3;  // rotação/torção em Z
+        
+        if (this.scene) {
+            this.scene.add(this.particles);
+        }
+    }
+
+    handleResize() {
+        this.resizeListener = () => {
+            if (!this.container || !this.camera || !this.renderer) return;
+            const width = this.container.clientWidth;
+            const height = this.container.clientHeight;
+            
+            this.camera.aspect = width / height;
+            this.camera.updateProjectionMatrix();
+            
+            this.renderer.setSize(width, height);
+            // Opcional: ajuste também o pixelRatio no resize
+            // this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        };
+        
+        window.addEventListener('resize', this.resizeListener);
+    }
+
+    animate() {
+        this.animationFrameId = requestAnimationFrame(() => this.animate());
+        
+        if (this.particles) {
+            // Velocidade de rotação: aumente/diminua para acelerar/desacelerar
+            this.particles.rotation.y += 0.003;
+            // Interações? Você pode alterar rotação conforme mouse/scroll:
+            // ex.: this.particles.rotation.y += mouseDeltaX * 0.0001;
+        }
+        
+        this.renderer.render(this.scene, this.camera);
+    }
+
+    destroy() {
+        if (this.animationFrameId) {
+            cancelAnimationFrame(this.animationFrameId);
+        }
+        
+        if (this.resizeListener) {
+            window.removeEventListener('resize', this.resizeListener);
+        }
+        
+        if (this.particles) {
+            this.particles.geometry.dispose();
+            this.particles.material.dispose();
+            this.scene.remove(this.particles);
+        }
+        
+        if (this.renderer) {
+            this.renderer.dispose();
+        }
+    }
+}
+
+// Initialize galaxy when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    // Se quiser várias galáxias, instancie com outros IDs
+    const galaxy = new GalaxyParticles('space', 'galaxy-canvas');
+    
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', () => {
+        galaxy.destroy();
+    });
+  });
+  </script>
