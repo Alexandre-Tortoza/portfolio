@@ -7,5 +7,5 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
       vite: { plugins: [tailwindcss()] },
       site: 'https://alexandre-tortoza.github.io',
-      base: '/portfolio/',
+      base: '/portfolio',
 });
