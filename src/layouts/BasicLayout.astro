@@ -3,11 +3,11 @@
 import '@styles/global.css'
 import 'aos/dist/aos.css'
 import { ViewTransitions } from 'astro:transitions'
-import initAOSUrl from '../scripts/initAOS.ts?url'
+import initAOSUrl from '@scripts/initAOS.ts?url'
 
 import FloatingLinks from '@components/FloatingLinks.astro'
 
-import type {PageHead} from "../scripts/types/PageHead"
+import type {PageHead} from "@scripts/types/PageHead"
 
 const {lang = 'pt-br', title = 'Alexandre Tortoza'} = Astro.props
 
