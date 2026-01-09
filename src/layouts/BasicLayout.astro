@@ -8,23 +8,96 @@ import FloatingLinks from '@components/FloatingLinks.astro'
 
 import type {PageHead} from "@scripts/types/PageHead"
 
-const {lang = 'pt-br', title = 'Alexandre Tortoza'} = Astro.props
+interface Props extends PageHead {}
 
-const pagehead :PageHead = {
+const {
+  lang = 'pt-br',
+  title = 'Alexandre Tortoza | Desenvolvedor Full Stack & UI/UX Designer',
+  description = 'Portfólio de Alexandre Tortoza - Desenvolvedor Full Stack especializado em Vue.js, React e Laravel. UI/UX Designer criando experiências digitais modernas e funcionais.',
+  keywords = 'desenvolvedor, full stack, frontend, backend, vue.js, react, laravel, ui/ux, designer, portfolio, curitiba, brasil',
+  image = 'https://alexandre-tortoza.tech/og-image.png',
+  url = 'https://alexandre-tortoza.tech/',
+  type = 'website'
+} = Astro.props
+
+const pagehead: PageHead = {
   lang,
-  title
+  title,
+  description,
+  keywords,
+  image,
+  url,
+  type
 }
 
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || url)
 ---
 
 <html lang={pagehead.lang}>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-    <title>{pagehead.title}</title>
-    <ViewTransitions fallback="none" />
+		
+		<!-- Primary Meta Tags -->
+		<title>{pagehead.title}</title>
+		<meta name="title" content={pagehead.title} />
+		<meta name="description" content={pagehead.description} />
+		<meta name="keywords" content={pagehead.keywords} />
+		<meta name="author" content="Alexandre Tortoza" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href={canonicalURL} />
+		
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
+		<link rel="apple-touch-icon" href="/portfolio/favicon.svg" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content={pagehead.type} />
+		<meta property="og:url" content={pagehead.url} />
+		<meta property="og:title" content={pagehead.title} />
+		<meta property="og:description" content={pagehead.description} />
+		<meta property="og:image" content={pagehead.image} />
+		<meta property="og:locale" content={pagehead.lang === 'pt-br' ? 'pt_BR' : 'en_US'} />
+		<meta property="og:site_name" content="Alexandre Tortoza Portfolio" />
+		
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={pagehead.url} />
+		<meta name="twitter:title" content={pagehead.title} />
+		<meta name="twitter:description" content={pagehead.description} />
+		<meta name="twitter:image" content={pagehead.image} />
+		
+		<!-- Theme Color -->
+		<meta name="theme-color" content="#0a0a0a" />
+		<meta name="msapplication-TileColor" content="#0a0a0a" />
+		
+		<!-- Structured Data (JSON-LD) -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Alexandre Tortoza",
+			"url": pagehead.url,
+			"image": pagehead.image,
+			"jobTitle": "Desenvolvedor Full Stack & UI/UX Designer",
+			"worksFor": {
+				"@type": "Organization",
+				"name": "Freelancer"
+			},
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Curitiba",
+				"addressRegion": "Paraná",
+				"addressCountry": "BR"
+			},
+			"sameAs": [
+				"https://www.linkedin.com/in/Alexandre-Tortoza/",
+				"https://github.com/Alexandre-Tortoza"
+			],
+			"knowsAbout": ["Vue.js", "React", "Laravel", "TypeScript", "UI/UX Design", "Tailwind CSS"]
+		})} />
+		
+		<ViewTransitions fallback="none" />
 	</head>
   <body  class="bg-plato-950 w-full">
     <slot />
