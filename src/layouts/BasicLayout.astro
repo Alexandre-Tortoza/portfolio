@@ -1,9 +1,7 @@
 
 ---
 import '@styles/global.css'
-import 'aos/dist/aos.css'
 import { ViewTransitions } from 'astro:transitions'
-import initAOSUrl from '@scripts/initAOS.ts?url'
 
 import FloatingLinks from '@components/FloatingLinks.astro'
 
@@ -31,8 +29,6 @@ const pagehead :PageHead = {
     <slot />
 
     <FloatingLinks />
-
-    <script type="module" src={initAOSUrl}></script>
 
     <script>
       // Persistimos a posição de scroll da Home ao sair
